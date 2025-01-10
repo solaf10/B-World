@@ -182,6 +182,10 @@ header .sidebar .dark-holder .oval {
   }
 }
 @media (max-width: 768px) {
+  .hero {
+    padding-top: 140px;
+    padding-bottom: 50px;
+  }
   header {
     height: unset;
   }
@@ -215,7 +219,7 @@ header .sidebar .dark-holder .oval {
     height: 258px;
   }
   .hero .text h1 {
-    font-size: 28px;
+    font-size: 40px;
   }
 }
 /* suggestions */
