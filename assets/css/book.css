@@ -1,0 +1,76 @@
+header {
+  height: unset;
+  min-height: calc(100vh - 60px);
+}
+header .container {
+  height: 100%;
+  padding: 180px 70px 100px;
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+header .container.loading {
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+header .container > img {
+  width: 476px;
+  height: 600px;
+}
+header .container .content {
+  width: 100%;
+}
+header .container .text {
+  padding-bottom: 37px;
+  border-bottom: 1px solid var(--primary);
+}
+header .container .text h1 {
+  font-size: 40px;
+}
+header .container .text .author {
+  display: block;
+  font-size: 12px;
+}
+header .container .text h2 {
+  padding: 31px 0px 10px;
+  font-size: 18px;
+}
+header .container .text p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 23px;
+}
+header .container .text .counter {
+  padding: 31px 0px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+header .container .text .btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+header .container .text .btns button {
+  width: 100%;
+}
+header .container .text .btns button:last-child {
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  background-color: white;
+}
+header .container .infos {
+  padding-top: 37px;
+}
+header .container .infos > div:not(:last-child) {
+  margin-bottom: 20px;
+}
+header .container .infos > div .title {
+  color: var(--violet);
+}
+/* dark */
+body.dark header .text .btns button:last-child {
+  background-color: #09070c;
+}
