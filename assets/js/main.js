@@ -65,8 +65,9 @@ if (localStorage.getItem("isDark") == "dark") {
 
 const cardsHolder = document.querySelector(".suggestions .cards");
 const baseURL = `https://example-data.draftbit.com/books?_limit=8`;
+console.log(window.location.hostname);
 function showBookDetails(cardID) {
-  let url = new URL("/book.html", "http://127.0.0.1:5501/index.html");
+  let url = new URL(`/book.html`, window.location.href);
   const urlParams = new URLSearchParams(url.search);
   urlParams.set("id", cardID);
   url.search = urlParams;
