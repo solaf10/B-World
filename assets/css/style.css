@@ -271,6 +271,11 @@ header .sidebar .dark-holder .oval {
   border: 1px solid var(--primary);
   background-color: white;
 }
+@media (max-width: 370px) {
+  .suggestions .cards {
+    grid-template-columns: none;
+  }
+}
 /* dark styles */
 body.dark {
   /* background-color: #16131e; */
@@ -289,6 +294,13 @@ body.dark header nav {
 body.dark header nav {
   box-shadow: none;
   border-bottom: 1px solid var(--primary);
+}
+@media (max-width: 500px) {
+  header,
+  .suggestions,
+  .contact {
+    padding: 0px 16px;
+  }
 }
 /* global rules */
 header,
@@ -340,7 +352,7 @@ input[type="submit"] {
   width: 50%;
 }
 .contact iframe {
-  height: 468px;
+  min-height: 468px;
 }
 .contact .text p {
   line-height: 24px;
@@ -363,6 +375,18 @@ input[type="submit"] {
 }
 .contact input[type="submit"] {
   width: 100%;
+}
+@media (max-width: 991px) {
+  .contact {
+    flex-wrap: wrap;
+  }
+  .contact .text,
+  .contact iframe {
+    width: 100%;
+  }
+  .contact .text {
+    padding-top: 0px;
+  }
 }
 /* footer */
 
