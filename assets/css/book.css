@@ -4,7 +4,7 @@ header {
 }
 header .container {
   height: 100%;
-  padding: 180px 70px 100px;
+  padding: 180px 0px 100px;
   display: flex;
   justify-content: space-between;
   gap: 50px;
@@ -73,4 +73,26 @@ header .container .infos > div .title {
 /* dark */
 body.dark header .text .btns button:last-child {
   background-color: #09070c;
+}
+@media (max-width: 991px) {
+  header .container {
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+  }
+}
+@media (max-width: 500px) {
+  header .container {
+    padding-top: 150px;
+  }
+  header .container > img {
+    width: 100%;
+    height: auto;
+  }
+  header .container .text .btns {
+    flex-wrap: wrap;
+  }
+  footer {
+    font-size: 14px;
+  }
 }
