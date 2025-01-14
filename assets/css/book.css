@@ -10,7 +10,7 @@ header .container {
   gap: 50px;
 }
 header .container.loading {
-  height: 100vh;
+  min-height: 100vh;
   justify-content: center;
   align-items: center;
 }

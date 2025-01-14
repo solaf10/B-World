@@ -1,6 +1,5 @@
 const container = document.querySelector("header .container");
 const cardID = +window.location.search[window.location.search.length - 1];
-console.log();
 const baseURL = `https://example-data.draftbit.com/books/`;
 function read() {
   container.classList.add("loading");
@@ -68,11 +67,11 @@ const darkSwitch = document.querySelector(".switch .circle");
 const logo = document.querySelector(".logo");
 // burger menu
 menuIcon.addEventListener("click", (event) => {
-  sideBar.style.display = "block";
+  sideBar.style.visibility = "visible";
   sideBar.style.width = "256px";
 });
 closeIcon.addEventListener("click", (event) => {
-  sideBar.style.display = "none";
+  sideBar.style.visibility = "hidden";
   sideBar.style.width = "0px";
 });
 // dark&light mode
@@ -80,15 +79,15 @@ darkIcon.addEventListener("click", (event) => {
   if (localStorage.getItem("isDark") == "dark") {
     localStorage.setItem("isDark", "light");
     document.body.classList.remove("dark");
-    darkIcon.src = "/assets/imgs/moon-01.svg";
+    darkIcon.src = "./assets/imgs/moon-01.svg";
     Array.from(darkTitle)[0].innerHTML = "Dark mode";
-    logo.src = "/assets/imgs/Logo.svg";
+    logo.src = "./assets/imgs/Logo.svg";
   } else {
     localStorage.setItem("isDark", "dark");
     document.body.classList.add("dark");
-    darkIcon.src = "/assets/imgs/light-icon.svg";
+    darkIcon.src = "./assets/imgs/light-icon.svg";
     Array.from(darkTitle)[0].innerHTML = "Light mode";
-    logo.src = "/assets/imgs/dark-logo.svg";
+    logo.src = "./assets/imgs/dark-logo.svg";
   }
 });
 darkSwitch.addEventListener("click", (event) => {
@@ -97,27 +96,27 @@ darkSwitch.addEventListener("click", (event) => {
     document.body.classList.remove("dark");
     Array.from(darkTitle)[1].innerHTML = "Dark mode";
     darkSwitch.parentElement.style.justifyContent = "end";
-    logo.src = "/assets/imgs/Logo.svg";
+    logo.src = "./assets/imgs/Logo.svg";
   } else {
     localStorage.setItem("isDark", "dark");
     document.body.classList.add("dark");
     Array.from(darkTitle)[1].innerHTML = "Light mode";
     darkSwitch.parentElement.style.justifyContent = "start";
-    logo.src = "/assets/imgs/dark-logo.svg";
+    logo.src = "./assets/imgs/dark-logo.svg";
   }
 });
 if (localStorage.getItem("isDark") == "dark") {
   Array.from(darkTitle)[1].innerHTML = "Light mode";
   darkSwitch.parentElement.style.justifyContent = "start";
-  logo.src = "/assets/imgs/dark-logo.svg";
-  darkIcon.src = "/assets/imgs/light-icon.svg";
+  logo.src = "./assets/imgs/dark-logo.svg";
+  darkIcon.src = "./assets/imgs/light-icon.svg";
   Array.from(darkTitle)[0].innerHTML = "Light mode";
   document.body.classList.add("dark");
 } else {
   document.body.classList.remove("dark");
   Array.from(darkTitle)[1].innerHTML = "Dark mode";
   darkSwitch.parentElement.style.justifyContent = "end";
-  logo.src = "/assets/imgs/Logo.svg";
-  darkIcon.src = "/assets/imgs/moon-01.svg";
+  logo.src = "./assets/imgs/Logo.svg";
+  darkIcon.src = "./assets/imgs/moon-01.svg";
   Array.from(darkTitle)[0].innerHTML = "Dark mode";
 }

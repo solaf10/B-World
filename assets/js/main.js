@@ -20,15 +20,15 @@ darkIcon.addEventListener("click", (event) => {
   if (localStorage.getItem("isDark") == "dark") {
     localStorage.setItem("isDark", "light");
     document.body.classList.remove("dark");
-    darkIcon.src = "/assets/imgs/moon-01.svg";
+    darkIcon.src = "./assets/imgs/moon-01.svg";
     Array.from(darkTitle)[0].innerHTML = "Dark mode";
-    logo.src = "/assets/imgs/Logo.svg";
+    logo.src = "./assets/imgs/Logo.svg";
   } else {
     localStorage.setItem("isDark", "dark");
     document.body.classList.add("dark");
-    darkIcon.src = "/assets/imgs/light-icon.svg";
+    darkIcon.src = "./assets/imgs/light-icon.svg";
     Array.from(darkTitle)[0].innerHTML = "Light mode";
-    logo.src = "/assets/imgs/dark-logo.svg";
+    logo.src = "./assets/imgs/dark-logo.svg";
   }
 });
 darkSwitch.addEventListener("click", (event) => {
@@ -37,41 +37,36 @@ darkSwitch.addEventListener("click", (event) => {
     document.body.classList.remove("dark");
     Array.from(darkTitle)[1].innerHTML = "Dark mode";
     darkSwitch.parentElement.style.justifyContent = "end";
-    logo.src = "/assets/imgs/Logo.svg";
+    logo.src = "./assets/imgs/Logo.svg";
   } else {
     localStorage.setItem("isDark", "dark");
     document.body.classList.add("dark");
     Array.from(darkTitle)[1].innerHTML = "Light mode";
     darkSwitch.parentElement.style.justifyContent = "start";
-    logo.src = "/assets/imgs/dark-logo.svg";
+    logo.src = "./assets/imgs/dark-logo.svg";
   }
 });
 if (localStorage.getItem("isDark") == "dark") {
   Array.from(darkTitle)[1].innerHTML = "Light mode";
   darkSwitch.parentElement.style.justifyContent = "start";
-  logo.src = "/assets/imgs/dark-logo.svg";
-  darkIcon.src = "/assets/imgs/light-icon.svg";
+  logo.src = "./assets/imgs/dark-logo.svg";
+  darkIcon.src = "./assets/imgs/light-icon.svg";
   Array.from(darkTitle)[0].innerHTML = "Light mode";
   document.body.classList.add("dark");
 } else {
   document.body.classList.remove("dark");
   Array.from(darkTitle)[1].innerHTML = "Dark mode";
   darkSwitch.parentElement.style.justifyContent = "end";
-  logo.src = "/assets/imgs/Logo.svg";
-  darkIcon.src = "/assets/imgs/moon-01.svg";
+  logo.src = "./assets/imgs/Logo.svg";
+  darkIcon.src = "./assets/imgs/moon-01.svg";
   Array.from(darkTitle)[0].innerHTML = "Dark mode";
 }
 // show the books
 
 const cardsHolder = document.querySelector(".suggestions .cards");
 const baseURL = `https://example-data.draftbit.com/books?_limit=8`;
-console.log(window.location.hostname);
 function showBookDetails(cardID) {
-  let url = new URL(`/book.html`, window.location.href);
-  const urlParams = new URLSearchParams(url.search);
-  urlParams.set("id", cardID);
-  url.search = urlParams;
-  window.location.href = url;
+  window.location.href = `book.html?id=${cardID}`;
 }
 async function read() {
   cardsHolder.classList.add("loading");
